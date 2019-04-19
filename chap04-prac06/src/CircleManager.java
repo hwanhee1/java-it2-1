@@ -29,7 +29,7 @@ public class CircleManager {
 				biggestIndex = i;
 		}
 		
-		System.out.print("°¡Àå ¸éÀûÀÎ Å« ¿øÀº ");
+		System.out.print("");
 		c[biggestIndex].show();
 		scanner.close();
 	}
