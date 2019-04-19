@@ -18,18 +18,18 @@ public class PhoneBook {
 	}
 	
 	void read() {
-		System.out.print("ÀÎ¿ø¼ö>>");
+		System.out.print("ì¸ì›ìˆ˜>>");
 		int n = scanner.nextInt();
 		
-		pArray = new Phone [n]; // n ¸íÀ» ÀúÀåÇÒ ¹è¿­ ¼±¾ğ
+		pArray = new Phone [n];
 		for(int i=0; i<pArray.length; i++) {
-			System.out.print("ÀÌ¸§°ú ÀüÈ­¹øÈ£(ÀÌ¸§°ú ¹øÈ£´Â ºó Ä­¾øÀÌ ÀÔ·Â)>>");			
+			System.out.print("ì´ë¦„ê³¼ ì „í™”ë²ˆí˜¸(ì´ë¦„ê³¼ ë²ˆí˜¸ëŠ” ë¹ˆ ì¹¸ì—†ì´ ì…ë ¥)>>");			
 			String name = scanner.next();
 			String tel = scanner.next();
 			pArray[i] = new Phone(name, tel);
 		}
 		
-		System.out.println("ÀúÀåµÇ¾ú½À´Ï´Ù...");		
+		System.out.println("ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤...");		
 	}
 	
 	String search(String name) {
@@ -43,15 +43,15 @@ public class PhoneBook {
 	void run() {
 		read();
 		while(true) {
-			System.out.print("°Ë»öÇÒ ÀÌ¸§>>");
+			System.out.print("ê²€ìƒ‰í•  ì´ë¦„>>");
 			String name = scanner.next();
-			if(name.equals("±×¸¸"))
+			if(name.equals("ê·¸ë§Œ"))
 				break;
 			String tel = search(name);
 			if(tel == null)
-				System.out.println(name + " ÀÌ ¾ø½À´Ï´Ù.");
+				System.out.println(name + " ì´ ì—†ìŠµë‹ˆë‹¤.");
 			else
-				System.out.println(name + "ÀÇ ¹øÈ£´Â " + tel + " ÀÔ´Ï´Ù.");				
+				System.out.println(name + "ì˜ ë²ˆí˜¸ëŠ” " + tel + " ì…ë‹ˆë‹¤.");				
 		}	
 		
 		scanner.close();
