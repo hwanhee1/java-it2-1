@@ -1,18 +1,18 @@
 import java.util.Scanner;
 
 class Day {
-	private String work; // ÇÏ·çÀÇ ÇÒ ÀÏÀ» ³ªÅ¸³»´Â ¹®ÀÚ¿­
+	private String work;
 	public void set(String work) { this.work = work; }
 	public String get() { return work; }
 	public void show() {
-		if(work == null) System.out.println("¾ø½À´Ï´Ù.");
-		else System.out.println(work + "ÀÔ´Ï´Ù.");
+		if(work == null) System.out.println("ì—†ìŠµë‹ˆë‹¤.");
+		else System.out.println(work + "ì…ë‹ˆë‹¤.");
 	}
 }
 
 public class MonthSchedule {
 	private int nDays; 
-	private Day [] days; // Day °´Ã¼ ¹è¿­
+	private Day [] days;
 	private Scanner scanner;
 	
 	public MonthSchedule(int nDays) {
@@ -25,55 +25,55 @@ public class MonthSchedule {
 	}
 	
 	private void input() {
-		System.out.print("³¯Â¥(1~30)?");
+		System.out.print("ë‚ ì§œ(1~30)?");
 		int day = scanner.nextInt();
-		System.out.print("ÇÒÀÏ(ºóÄ­¾øÀÌÀÔ·Â)?");
+		System.out.print("í• ì¼(ë¹ˆì¹¸ì—†ì´ì…ë ¥)?");
 		String work = scanner.next();
 		day--;
 		
-		if(day < 0 || day > nDays) { // 0~29 ¸¸ À¯È¿
-			System.out.println("³¯Â¥ Àß¸ø ÀÔ·ÂÇÏ¿´½À´Ï´Ù.!");			
+		if(day < 0 || day > nDays) {
+			System.out.println("ë‚ ì§œ ì˜ëª» ì…ë ¥í•˜ì˜€ìŠµë‹ˆë‹¤.!");			
 			return;
 		}
 		days[day].set(work);
 	}
 	
 	private void view() {
-		System.out.print("³¯Â¥(1~30)?");
+		System.out.print("ë‚ ì§œ(1~30)?");
 		int day = scanner.nextInt();
 		day--;
-		if(day < 0 || day > nDays) { // 0~29 ¸¸ À¯È¿
-			System.out.println("³¯Â¥ Àß¸ø ÀÔ·ÂÇÏ¿´½À´Ï´Ù.!");			
+		if(day < 0 || day > nDays) {
+			System.out.println("ë‚ ì§œ ì˜ëª» ì…ë ¥í•˜ì˜€ìŠµë‹ˆë‹¤.!");			
 			return;
 		}
-		System.out.print((day+1) + "ÀÏÀÇ ÇÒ ÀÏÀº " );
+		System.out.print((day+1) + "ì¼ì˜ í•  ì¼ì€ " );
 		days[day].show();
 	}
 	
 
 	private void finish() {
 		scanner.close();
-		System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+		System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 	}
 	
 	public void run() {
-		System.out.println("ÀÌ¹ø´Ş ½ºÄÉÁì °ü¸® ÇÁ·Î±×·¥.");
+		System.out.println("ì´ë²ˆë‹¬ ìŠ¤ì¼€ì¥´ ê´€ë¦¬ í”„ë¡œê·¸ë¨.");
 
 		while(true) {
-			System.out.print("ÇÒÀÏ(ÀÔ·Â:1, º¸±â:2, ³¡³»±â:3) >>");
+			System.out.print("í• ì¼(ì…ë ¥:1, ë³´ê¸°:2, ëë‚´ê¸°:3) >>");
 			int menu = scanner.nextInt();
 			switch(menu) {
 			case 1: input(); break;
 			case 2: view(); break;
 			case 3: finish(); return;
 			default : 
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¿´½À´Ï´Ù.");
+				System.out.println("ì˜ëª»ì…ë ¥í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			}
 			System.out.println();
 		}		
 	}
 	public static void main(String[] args) {
-		MonthSchedule april = new MonthSchedule(30); // 4¿ù´ŞÀÇ ÇÒ ÀÏ
+		MonthSchedule april = new MonthSchedule(30);
 		april.run();
 	}
 
