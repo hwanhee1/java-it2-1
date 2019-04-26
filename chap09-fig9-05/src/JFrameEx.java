@@ -3,14 +3,14 @@ import java.awt.*;
 
 public class JFrameEx extends JFrame{
 	public JFrameEx() {
-		setTitle("ÇÁ·¹ÀÓ ±¸¼º");
+		setTitle("Ã‡ÃÂ·Â¹Ã€Ã“ Â±Â¸Â¼Âº");
 		
-		//¸Ş´º »ı¼º
+		//Â¸ÃÂ´Âº Â»Ã½Â¼Âº
 		JMenuBar mb = new JMenuBar();
 		JMenu fileMenu = new JMenu("file");
 		JMenu editMenu = new JMenu("edit");
-		JMenu sourceMent = new JMenu("Source");
-		JMenu searchMent = new JMenu("Search");
+		JMenu sourceMenu = new JMenu("Source");
+		JMenu searchMenu = new JMenu("Search");
 		JMenu windowMenu = new JMenu("Window");
 		
 		mb.add(fileMenu);
